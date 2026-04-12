@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/rack-ac/circadian/compare/v1.0.0...v1.0.1) (2026-04-12)
+
+
+### Bug Fixes
+
+* Renovate ([eb47c32](https://github.com/rack-ac/circadian/commit/eb47c3272b0e76145034e8f9dc560de4f4f708e9))
+* Renovate ([312585e](https://github.com/rack-ac/circadian/commit/312585e6f3ad68f58d6f4514ed93bc894bb8f9d4))
+
 ## 1.0.0 (2026-04-12)
 
 
