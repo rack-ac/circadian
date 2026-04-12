@@ -22,8 +22,8 @@ import (
 )
 
 const (
-	authPath  = "/oauth/oauth2/auth"
-	tokenPath = "/oauth/oauth2/token"
+	authPath       = "/oauth/oauth2/auth"
+	oauthTokenPath = "/oauth/oauth2/token" // #nosec G101 -- OAuth endpoint path, not a credential
 )
 
 var allScopes = []string{
@@ -216,7 +216,7 @@ func (m *Manager) exchange(ctx context.Context, form url.Values) (*Token, error)
 	req, err := http.NewRequestWithContext(
 		ctx,
 		http.MethodPost,
-		strings.TrimRight(m.cfg.APIRoot, "/")+tokenPath,
+		strings.TrimRight(m.cfg.APIRoot, "/")+oauthTokenPath,
 		strings.NewReader(form.Encode()),
 	)
 	if err != nil {

@@ -46,9 +46,12 @@ func (c *Client) getJSON(ctx context.Context, path string, query url.Values, out
 		}
 
 		body, readErr := io.ReadAll(io.LimitReader(resp.Body, 2<<20))
-		resp.Body.Close()
+		closeErr := resp.Body.Close()
 		if readErr != nil {
 			return fmt.Errorf("read WHOOP response: %w", readErr)
+		}
+		if closeErr != nil {
+			return fmt.Errorf("close WHOOP response body: %w", closeErr)
 		}
 
 		switch {
