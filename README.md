@@ -2,7 +2,7 @@
 
 Circadian is a small MCP server for the WHOOP Developer API.
 
-I built it partly because I wanted a WHOOP integration for my own MCP setup, and partly because I wanted to properly learn how MCP servers work in practice. This repo was developed iteratively with Codex, using the project itself as a way to understand transport choices, tool design, OAuth flows, local token handling, and release automation.
+I built it partly because I wanted a WHOOP integration for my own MCP setup, and partly because I wanted to properly learn how MCP servers work in practice.
 
 It is intentionally narrow in scope. The goal is not to mirror the full WHOOP API. The goal is to provide a small, usable local server that exposes the pieces of WHOOP data that are most useful in day-to-day MCP workflows.
 
@@ -20,20 +20,6 @@ Right now it includes tools for:
 - workouts
 
 It also includes a few lifecycle tools so you can inspect auth state, reauthorize, and revoke access without dealing with token files manually.
-
-## Why This Exists
-
-This project was a way for me to learn MCPs by building something concrete instead of just reading about the protocol.
-
-That meant making real decisions about:
-
-- stdio vs streamable HTTP
-- how MCP sessions behave
-- how to structure tool inputs and outputs
-- how to make OAuth tolerable in a local workflow
-- how to package and release a small MCP server cleanly
-
-Codex was part of that process. I used it as an implementation partner while working through the design and cleanup decisions in the repo.
 
 ## How It Runs
 
